@@ -18,14 +18,14 @@ sudo apt install -y build-essential checkinstall zlib1g-dev libssl-dev
 sudo apt install -y perl-modules perl-doc
 ```
 
-### 2. Build OpenSSL Library 3.5
+### 2. Build OpenSSL Library 3.5+
 
-Download and extract OpenSSL source:
+OpenSSL Library 3.5+ source bundle can be downloaded from [OpenSSL Downloads](https://openssl-library.org/source/).
 
 ```bash
-wget https://github.com/openssl/openssl/releases/download/openssl-3.5.4/openssl-3.5.4.tar.gz
-tar -xzf openssl-3.5.4.tar.gz
-cd openssl-3.5.4/
+wget https://github.com/openssl/openssl/releases/download/openssl-3.6.0/openssl-3.6.0.tar.gz
+tar -xzf openssl-3.6.0.tar.gz
+cd openssl-3.6.0/
 ```
 
 Configure and build OpenSSL with a local prefix:
@@ -47,29 +47,57 @@ echo "${OPENSSL_PREFIX}"
 cd ..
 ```
 
-### 3. Install Java 25
+### 3. Install OpenJDK Java 25
 
-Download and install Java Development Kit 25 (any provider will work, [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) is used here):
+Download the OpenJDK Java 25 [download page](https://jdk.java.net/25/).
 
 ```bash
-wget https://download.oracle.com/java/25/latest/jdk-25_linux-x64_bin.deb
-sudo dpkg -i jdk-25_linux-x64_bin.deb
+wget https://download.java.net/java/GA/jdk25.0.1/2fbf10d8c78e40bd87641c434705079d/8/GPL/openjdk-25.0.1_linux-x64_bin.tar.gz
+
+# Create directory for Java installation
+sudo mkdir -p /opt/java
+
+# Extract the tar.gz file to /opt/java
+sudo tar -xzf openjdk-25.0.1_linux-x64_bin.tar.gz -C /opt/java
+
+# Rename for easier access (optional)
+sudo mv /opt/java/jdk-25.0.1 /opt/java/jdk-25
+```
+
+**Set Environment Variables**
+
+Configure `JAVA_HOME` and `PATH` variables for your system:
+
+```bash
+# Edit your bash profile
+vim ~/.bashrc
+
+# Add these lines at the end of the file:
+export JAVA_HOME=/opt/java/jdk-25
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Apply the changes
+source ~/.bashrc
+```
+
+Check that Java 25 is installed correctly:
+
+```bash
 java --version
+javac --version
+echo $JAVA_HOME
 ```
 
 ![java version](./images/java-verify.png)
 
-Configure Java environment variables:
+For system-wide installation (all users), edit `/etc/environment`:
 
 ```bash
-readlink -f $(which java)
-```
+sudo vim /etc/environment
 
-![check java](./images/check-java-env-path.png)
-
-```bash
-export JAVA_HOME=/usr/lib/jvm/jdk-25.0.1-oracle-x64
-export PATH=$JAVA_HOME/bin:$PATH
+# Add this line:
+JAVA_HOME="/opt/java/jdk-25"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/java/jdk-25/bin"
 ```
 
 ### 4. Install CMake
@@ -131,6 +159,8 @@ Build the final jar:
 
 ![build success](./images/build-clean-skip-tests.png)
 
+Complete build output (without skipping tests) can be found in [gradle-build.log](gradlew-build.log).
+
 ### 6. Verify Installation
 
 Run the DumpInfo utility to verify successful deployment:
@@ -148,8 +178,7 @@ java --module-path jostle/build/libs/openssl-jostle-1.0-SNAPSHOT.jar \
 The compiled jar file will be located at:
 
 ```
-
-jostle/build/libs/openssl-jostle-1.0-SNAPSHOT.jar
+openssl-jorstle/jostle/build/libs/openssl-jostle-1.0-SNAPSHOT.jar
 
 ```
 
@@ -166,7 +195,9 @@ java -Dorg.openssl.jostle.loader.interface=JNI \
 
 Interface Options:
 
-- `auto`: Automatically detect and use FFI if available, otherwise JNI
-- `ffi`: Force FFI interface only
-- `jni`: Force JNI interface only
-- `none`: Do not extract interface libraries (for custom configurations)
+| Option | Description                                                    |
+| :----- | :------------------------------------------------------------- |
+| `auto` | Automatically detect and use FFI if available, otherwise JNI   |
+| `ffi`  | Force FFI interface only                                       |
+| `jni`  | Force JNI interface only                                       |
+| `none` | Do not extract interface libraries (for custom configurations) |

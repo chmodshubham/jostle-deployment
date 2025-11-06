@@ -90,70 +90,31 @@ Asn1LimitTest > fromPrivateKey_dodgyDataTooShort() PASSED
 
 Asn1LimitTest > fromPrivateKey_dodgyData() PASSED
 
-AESAgreementTest > aesGCMSpreadSplitUpdateDoFinal() FAILED
-    java.lang.SecurityException at AESAgreementTest.java:866
-        Caused by: java.lang.SecurityException at AESAgreementTest.java:866
-            Caused by: java.io.FileNotFoundException at AESAgreementTest.java:866
+AESAgreementTest > aesGCMSpreadSplitUpdateDoFinal() PASSED
 
-AESAgreementTest > testAes() FAILED
-    java.lang.SecurityException at AESAgreementTest.java:76
-        Caused by: java.lang.SecurityException at AESAgreementTest.java:866
-            Caused by: java.io.FileNotFoundException at AESAgreementTest.java:866
+AESAgreementTest > testAes() PASSED
 
-AESAgreementTest > aesGCMWithAAD() FAILED
-    java.lang.SecurityException at AESAgreementTest.java:961
-        Caused by: java.lang.SecurityException at AESAgreementTest.java:866
-            Caused by: java.io.FileNotFoundException at AESAgreementTest.java:866
+AESAgreementTest > aesGCMWithAAD() PASSED
 
-AESAgreementTest > aesGCMSpread() FAILED
-    java.lang.SecurityException at AESAgreementTest.java:755
-        Caused by: java.lang.SecurityException at AESAgreementTest.java:866
-            Caused by: java.io.FileNotFoundException at AESAgreementTest.java:866
+AESAgreementTest > aesGCMSpread() PASSED
 
-AESAgreementTest > aesGCMWithTagLen() FAILED
-    java.lang.SecurityException at AESAgreementTest.java:1067
-        Caused by: java.lang.SecurityException at AESAgreementTest.java:866
-            Caused by: java.io.FileNotFoundException at AESAgreementTest.java:866
+AESAgreementTest > aesGCMWithTagLen() PASSED
 
-AESKeyGeneratorTest > testInitFails_notSupported() FAILED
-    java.security.NoSuchProviderException at AESKeyGeneratorTest.java:34
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+AESKeyGeneratorTest > testInitFails_notSupported() PASSED
 
-AESKeyGeneratorTest > testGen_basicUse() FAILED
-    java.security.NoSuchProviderException at AESKeyGeneratorTest.java:127
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+AESKeyGeneratorTest > testGen_basicUse() PASSED
 
-AESKeyGeneratorTest > testGenFails_invalidKeySize() FAILED
-    java.security.NoSuchProviderException at AESKeyGeneratorTest.java:52
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+AESKeyGeneratorTest > testGenFails_invalidKeySize() PASSED
 
-AESKeyGeneratorTest > testGen_validKeySizes() FAILED
-    java.security.NoSuchProviderException at AESKeyGeneratorTest.java:113
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+AESKeyGeneratorTest > testGen_validKeySizes() PASSED
 
-AESKeyGeneratorTest > testDestroy() FAILED
-    java.security.NoSuchProviderException at AESKeyGeneratorTest.java:146
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+AESKeyGeneratorTest > testDestroy() PASSED
 
-AESKeyGeneratorTest > testGen_default256() FAILED
-    java.security.NoSuchProviderException at AESKeyGeneratorTest.java:103
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+AESKeyGeneratorTest > testGen_default256() PASSED
 
-AESKeyGeneratorTest > testGenFails_fixedKeySize() FAILED
-    java.security.NoSuchProviderException at AESKeyGeneratorTest.java:68
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+AESKeyGeneratorTest > testGenFails_fixedKeySize() PASSED
 
-ARIAAgreementTest > testAria() FAILED
-    java.lang.SecurityException at ARIAAgreementTest.java:71
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+ARIAAgreementTest > testAria() PASSED
 
 BlockCipherLimitTest > testCAMELLIAInitParams() PASSED
 
@@ -215,15 +176,9 @@ BlockCipherLimitTest > testBlockCipherFinal_outOffOutOfRange() PASSED
 
 BlockCipherLimitTest > testBlockCipherFinal_basicCtrOverflow() PASSED
 
-CAMELLIAAgreementTest > testCamellia() FAILED
-    java.lang.SecurityException at CAMELLIAAgreementTest.java:71
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+CAMELLIAAgreementTest > testCamellia() PASSED
 
-SM4AgreementTest > testSM4() FAILED
-    java.lang.SecurityException at SM4AgreementTest.java:71
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+SM4AgreementTest > testSM4() PASSED
 
 MLDSALimitTest > MLDSAServiceJNI_generateKeyPair_seedLenPastEndOfArray() PASSED
 
@@ -553,20 +508,11 @@ MLKEMOpsTest > MLKEMService_getPrivateKey_OutputInt32Overflow() PASSED
 
 MLKEMOpsTest > MLKEMServiceJNI_decode_1publicKey_openSSLErrorDecoding() PASSED
 
-MLKEMTest > testKeyExchangeJSLToBC() FAILED
-    java.security.NoSuchProviderException at MLKEMTest.java:178
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+MLKEMTest > testKeyExchangeJSLToBC() PASSED
 
-MLKEMTest > basicJSLtoJSLTest() FAILED
-    java.security.NoSuchProviderException at MLKEMTest.java:133
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+MLKEMTest > basicJSLtoJSLTest() PASSED
 
-MLKEMTest > testKeyExchangeBCToJSL() FAILED
-    java.security.NoSuchProviderException at MLKEMTest.java:233
-        Caused by: java.lang.SecurityException at JarVerifier.java:388
-            Caused by: java.io.FileNotFoundException at RandomAccessFile.java:-2
+MLKEMTest > testKeyExchangeBCToJSL() PASSED
 
 MLKEMTest > testIncorrectForcedType_KeyPairGenerator() PASSED
 
@@ -765,9 +711,8 @@ SLHDSAOpsTest > SLHDSAServiceJNI_slhdsa_update_accessInputArray() PASSED
 SLHDSAOpsTest > testSLHDSAGenerateKeyPair_openSSLError() PASSED
 
 SLHDSATest > nullMessageOnUpdateFails() PASSED
-<===========--> 89% EXECUTING [1m 31s]
 
-SLHDSATest > testSLHDSASignature() PASSEDsl.jostle.test.slhdsa.SLHDSATest
+SLHDSATest > testSLHDSASignature() PASSED
 
 SLHDSATest > testSingleByteUpdateVerify() PASSED
 
@@ -897,20 +842,7 @@ SpecOpsTest > encap_EVP_PKEY_CTX_set_kem_op() PASSED
 
 SpecOpsTest > decap_EVP_PKEY_decapsulate() PASSED
 
-404 tests completed, 18 failed
-
-> Task :jostle:test FAILED
-
 [Incubating] Problems report is available at: file:///home/ubuntu/openssl-jostle/build/reports/problems/problems-report.html
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':jostle:test'.
-> There were failing tests. See the report at: file:///home/ubuntu/openssl-jostle/jostle/build/reports/tests/test/index.html
-
-* Try:
-> Run with --scan to generate a Build Scan (Powered by Develocity).
 
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
 
@@ -918,5 +850,5 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/9.1.0/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD FAILED in 2m 56s
+BUILD SUCCESSFUL in 15m 4s
 12 actionable tasks: 12 executed
