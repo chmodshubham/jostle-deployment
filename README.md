@@ -178,7 +178,7 @@ java --module-path jostle/build/libs/openssl-jostle-1.0-SNAPSHOT.jar \
 The compiled jar file will be located at:
 
 ```
-openssl-jorstle/jostle/build/libs/openssl-jostle-1.0-SNAPSHOT.jar
+openssl-jostle/jostle/build/libs/openssl-jostle-1.0-SNAPSHOT.jar
 
 ```
 
